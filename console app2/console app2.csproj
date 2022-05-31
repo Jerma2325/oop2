@@ -6,4 +6,10 @@
     <RootNamespace>console_app2</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Classes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes\" />
+  </ItemGroup>
 </Project>

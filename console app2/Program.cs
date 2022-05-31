@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-namespace ConsoleApp
+using console_app2.Classes;
+namespace console_app2
 {
     public class Program
     {
@@ -11,7 +12,7 @@ namespace ConsoleApp
             Student student1 = new Student("Jan Kowaslski", 21, "LAB-01");
             Student student2 = new Student("Jan Kowaslski", 21, "LAB-01");
             Student student3 = new Student("Jaś Fasola", 23, "LAB-02");
-
+            
             student1.AddTask("Taks A", TaskStatus.Waiting);
             student1.AddTask("Taks B", TaskStatus.Waiting);
             student1.AddTask("Taks C", TaskStatus.Rejected);
@@ -35,76 +36,5 @@ namespace ConsoleApp
             Console.WriteLine("student1 == student2: " + student1.Equals(student2)); // Output: student1 == student2: true
             Console.WriteLine("student1 == student3: " + student1.Equals(student3)); // Output: student1 == student3: false
         }
-    }
-
-    public class Person
-    {
-        protected string name;
-        protected int age;
-
-         public string Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
-
-        public int Age
-        {
-            get { return age; }
-            set { age = value; }
-        }
-
-        public Person(string name, int age)
-        {
-            this.name = name;
-            this.age = age;
-        }
-
-        public override bool Equals(object obj)
-        {
-            if ((obj == null) || !this.GetType().Equals(obj.GetType()))
-            {
-                return false;
-            }
-            else
-            {
-                Person p = (Person)obj;
-                return name.Equals(p.name) && age.Equals(p.age);
-            }
-        }
-
-        public override int GetHashCode()
-        {
-            return Tuple.Create(name, age).GetHashCode();
-        }
-        public override string ToString()
-        {
-            return name.ToString() + ("(")+ age.ToString() + ("y.o.)");
-        }
-
-
-    }
-
-    public class Student
-    {
-        protected string group;
-         
-    }
-
-    public class Task
-    {
-        private Person person;
-        public string Name
-        {
-            get { return person.Name; }
-             
-        }
-        public TaskStatus;
-    }
-    public class TaskStatus
-    {
-
-    }
-
-    
+    } 
 }
